@@ -1,10 +1,17 @@
 :root {
     --border: solid 2px black;
     --white: #ffffff;
+    --calc-inner-width: 400px;
+    --calc-margin: 15px;
+    --flex-gap: 15px;
+    --border-radius: 5px;
+    
   }
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    
 }
 body{
     
@@ -15,21 +22,71 @@ body{
     
 }
 .calculator-body{
+    box-sizing: border-box;
     margin-top: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    row-gap: var(--flex-gap);
     height: 600px;
     width: 450px;
     background-color: rgb(255, 229, 194);
     border-radius: 20px;
     border: var(--border);
 }
+
+
+
 .diplay{
-    width: 90%;
+    
+    width: var(--calc-inner-width);
     height: 80px;
     background-color: aliceblue;
-    border-radius: 5px;
+    border-radius: var(--border-radius);
     border: var(--border);
+}
+.delete-buttons{
+    width: var(--calc-inner-width);
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    
+    gap: 20px;
+    align-items: center;
+    
+}
+.button{
+    text-align: center;
+    vertical-align: middle;
+    line-height: 60px;  
+    border: var(--border);
+    border-radius: var(--border-radius);
+    height: 60px;
+    width: calc(var(--calc-inner-width) / 4.2  );
+    background-color: rgb(215, 215, 215);
+}
+.del-button{
+    width: calc(var(--calc-inner-width) / 2 );
+}
+
+
+#CE-button{
+    background-color: #ccacac;
+}
+
+#C-button{
+    background-color: #a1d4e3;
+}
+
+.nums-and-operations{
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.row{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
 }
